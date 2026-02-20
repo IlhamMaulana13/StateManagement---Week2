@@ -21,7 +21,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Consumer<CounterModel>(
@@ -55,13 +54,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   value.angka.toString(),
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
-        
               ],
             ),
           ),
-        
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              value.Increment();
+            },
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ),
         );
-      }
+      },
     );
   }
 }
